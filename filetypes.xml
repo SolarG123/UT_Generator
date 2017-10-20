@@ -1,0 +1,9 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="awd" type="CLASS" />
+      <mapping pattern="BrowseGUI" type="CLASS" />
+      <mapping pattern="sdf" type="CLASS" />
+    </extensionMap>
+  </component>
+</application>
