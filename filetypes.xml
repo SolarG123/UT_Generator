@@ -4,6 +4,7 @@
       <mapping pattern="awd" type="CLASS" />
       <mapping pattern="BrowseGUI" type="CLASS" />
       <mapping pattern="sdf" type="CLASS" />
+      <mapping pattern="GUI" type="Scala" />
     </extensionMap>
   </component>
 </application>
