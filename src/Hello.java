@@ -5,5 +5,5 @@ public class Hello {
 
     public void sayHello() {
         System.out.println("Ciao!");
-    } // Comment
+    } 
 }
