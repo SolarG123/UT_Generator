@@ -12,6 +12,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class BrowseGUI {
 
@@ -19,7 +20,7 @@ public class BrowseGUI {
      * Declaring GUI components below
      */
     private JPanel mainPanel;
-    private JTextField textField;
+    private JTextField textFieldSave;
     private JButton browseButton;
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane2;
@@ -114,6 +115,33 @@ public class BrowseGUI {
                 catch (Exception e1)
                 {
                     JOptionPane.showMessageDialog(null, e1.getMessage());
+                }
+            }
+        });
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fc1.setCurrentDirectory(fc.getCurrentDirectory());
+
+                if (e.getSource() == saveButton) {
+                    int returnVal = fc1.showSaveDialog(mainPanel);
+                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                        File file = fc1.getSelectedFile();
+                        textFieldSave.setText(file.getAbsolutePath());
+                        try{
+                            FileWriter newFile = new FileWriter(file.getPath());
+                            //fw.write(content);
+                            //fw.flush();
+                            //fw.close();
+                        }
+                        catch(Exception e1){
+                            JOptionPane.showMessageDialog(null, e1.getMessage());
+                        }
+                        /**
+                         * if the user wants to display only file name then the following line of code can be used
+                         * textField.setText(file.getName());
+                         */
+                    }
                 }
             }
         });
