@@ -1,5 +1,6 @@
 package com.swengGUI;
 
+
 import javafx.stage.FileChooser;
 
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 
 public class BrowseGUI {
 
@@ -36,6 +38,8 @@ public class BrowseGUI {
         DefaultListModel dm = new DefaultListModel();
         /**
          * Action Listener for the Browse Button
+         * On being clicked the Browse button opens up a file browser which can be used to
+         * select single or multiple files for testing.
          */
 
         browseButton.addActionListener(new ActionListener() {
@@ -81,32 +85,31 @@ public class BrowseGUI {
                 }
             }
         });
-
+        /**
+         * Action Listener for the file selected from the JList
+         * Upon selection file should open in another window.
+         */
         listFiles.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 /**
                  * JOptionPane implemented below is just for testing purposes.
                  */
-                JOptionPane.showMessageDialog(mainPanel, listFiles.getSelectedValue());
-                System.out.println(listFiles.getSelectedValue().toString());
+                //JOptionPane.showMessageDialog(mainPanel, listFiles.getSelectedValue());
+                //System.out.println(listFiles.getSelectedValue().toString());
                 try {
                     FileReader fr = new FileReader(listFiles.getSelectedValue().toString());
                     BufferedReader br = new BufferedReader(fr);
                     String sCurrentLine;
-                    /**
-                     * trying to create a new Panel here.
-                     */
-                    JPanel fileContent = new JPanel();
-                    JTextArea textArea = new JTextArea();
-                    fileContent.add(textArea);
-                    /**
-                     * Lines below again for testing
-                     */
-                    textArea.setText("Hello!!!!");
+                    ArrayList<String> fileContent = new ArrayList<>();
+
+
                     while((sCurrentLine = br.readLine())!= null){
                         System.out.println(sCurrentLine);
+                        fileContent.add(sCurrentLine);
                     }
+
+                    JOptionPane.showMessageDialog(mainPanel, fileContent.get(0), "File Content", JOptionPane. INFORMATION_MESSAGE);
 
                 }
                 catch (Exception e1)
@@ -131,13 +134,9 @@ public class BrowseGUI {
                             //fw.flush();
                             //fw.close();
                         }
-                        catch(Exception e1){
+                        catch(Exception e1) {
                             JOptionPane.showMessageDialog(null, e1.getMessage());
                         }
-                        /**
-                         * if the user wants to display only file name then the following line of code can be used
-                         * textField.setText(file.getName());
-                         */
                     }
                 }
             }
