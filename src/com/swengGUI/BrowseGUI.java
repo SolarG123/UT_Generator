@@ -28,6 +28,10 @@ public class BrowseGUI {
     private JList listFiles;
     private JButton saveButton;
     private JButton btnPreview;
+    private JScrollBar scrollBar1;
+    private JRadioButton radioButton1;
+    private JRadioButton radioButton2;
+    private JRadioButton radioButton3;
     private JLabel saveFile;
     JFileChooser fc = new JFileChooser();
     JFileChooser fc1 = new JFileChooser();
