@@ -24,6 +24,6 @@
         </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/Desktop/SwEngProject" />
+    <option name="cloneParentDir" value="$USER_HOME$/Desktop" />
   </component>
 </application>
