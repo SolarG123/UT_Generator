@@ -1,14 +1,9 @@
 package com.swengGUI;
-
-
-import javafx.stage.FileChooser;
-
 import java.io.BufferedReader;
 import java.io.File;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,12 +25,15 @@ public class BrowseGUI {
     private JList listFiles;
     private JButton saveButton;
     private JButton btnPreview;
+    private JLabel fixedLabel;
     private JLabel saveFile;
     JFileChooser fc = new JFileChooser();
     JFileChooser fc1 = new JFileChooser();
 
     public BrowseGUI() {
         DefaultListModel dm = new DefaultListModel();
+        fixedLabel = new JLabel("Output Save Destination");
+        fixedLabel.setLabelFor(textFieldSave);
         /**
          * Action Listener for the Browse Button
          * On being clicked the Browse button opens up a file browser which can be used to
@@ -60,6 +58,12 @@ public class BrowseGUI {
                 fc.setFileFilter(new FileNameExtensionFilter("Text Files(.txt)", "txt"));
                 fc.setFileFilter(new FileNameExtensionFilter("Java(.java)", "java"));
                 fc.setFileFilter(new FileNameExtensionFilter("C++(.cpp)", "cpp"));
+
+                fc1.setFileFilter(new FileNameExtensionFilter("Text Files(.txt)", "txt"));
+                fc1.setFileFilter(new FileNameExtensionFilter("Java(.java)", "java"));
+                fc1.setFileFilter(new FileNameExtensionFilter("C++(.cpp)", "cpp"));
+
+
                 /**
                  * The following code checks if the action of clicking the button takes place
                  * if it does then the user sees the textArea populated with the selected file
@@ -92,11 +96,7 @@ public class BrowseGUI {
         listFiles.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                /**
-                 * JOptionPane implemented below is just for testing purposes.
-                 */
-                //JOptionPane.showMessageDialog(mainPanel, listFiles.getSelectedValue());
-                //System.out.println(listFiles.getSelectedValue().toString());
+
                 try {
                     FileReader fr = new FileReader(listFiles.getSelectedValue().toString());
                     BufferedReader br = new BufferedReader(fr);
