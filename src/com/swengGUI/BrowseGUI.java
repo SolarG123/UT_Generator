@@ -19,8 +19,7 @@ public class BrowseGUI {
     private JPanel mainPanel;
     private JTextField textFieldSave;
     private JButton browseButton;
-    private JTabbedPane tabbedPane1;
-    private JTabbedPane tabbedPane2;
+    private JTabbedPane tabbedPane;
     private JButton submitButton;
     private JList listFiles;
     private JButton saveButton;
@@ -163,6 +162,43 @@ public class BrowseGUI {
                             JOptionPane.showMessageDialog(null, e1.getMessage());
                         }
                     }
+                }
+            }
+        });
+
+
+        /*
+        Submit button begins the process of generating the makefile, test fixtures, etc.
+        If the files could not be fully generated, a dialogue box pops up informing the user of the failure.
+        It redirects to a tab containing the error information.
+
+         */
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try { //begin the middle end attempt to parse and make files
+                        throw new Exception();
+                }
+                catch (Exception e1) //catch any error which happens to have resulted in generation failure
+                {
+                    JOptionPane.showMessageDialog(null, "ERROR: See Error Information Tab " +
+                            "for details");
+                    //clicking OK redirects you to a tabbed pane labelled ERRORS
+                    String errors = "Errors";
+
+                    //check if ERRORS tab exists. Create if it does not.
+                    if(tabbedPane.indexOfTab(errors) == -1) {
+                        tabbedPane.add(errors, new JScrollPane(new JList<>()));
+                    }
+
+                        //populate the list of errors. make the text red?
+
+                        //set ERROR tab as currently selected tab
+                    tabbedPane.getModel().setSelectedIndex(tabbedPane.indexOfTab(errors));
+
+
+
                 }
             }
         });
