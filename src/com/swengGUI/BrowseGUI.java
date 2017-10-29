@@ -72,10 +72,11 @@ public class BrowseGUI {
                 if (e.getSource() == browseButton) {
                     int returnVal = fc.showOpenDialog(mainPanel);
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        File[] files = fc.getSelectedFiles();
+                        File[] files = fc.getSelectedFiles(); // the selected files from browse
                         if (files.length > 1) {
                             for (int i = 0; i < files.length; i++) {
-                                dm.addElement(files[i].getAbsolutePath());
+                                dm.addElement(files[i].getAbsolutePath()); //add path into the JPanel
+
                             }
                         } else {
                             dm.addElement(files[0].getAbsolutePath());
@@ -133,6 +134,7 @@ public class BrowseGUI {
                         fileContent.add(sCurrentLine);
                     }
 
+                    //new window. modify later
                     JOptionPane.showMessageDialog(mainPanel, fileContent.get(0), "File Content", JOptionPane. INFORMATION_MESSAGE);
 
                 }
