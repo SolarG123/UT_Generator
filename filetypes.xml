@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping pattern="IgnoreMe" type="CLASS" />
+      <mapping pattern="lk" type="CLASS" />
       <mapping pattern="awd" type="CLASS" />
       <mapping pattern="BrowseGUI" type="CLASS" />
       <mapping pattern="PopUpDemo" type="CLASS" />
