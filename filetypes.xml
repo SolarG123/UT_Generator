@@ -8,6 +8,7 @@
       <mapping pattern="sdf" type="CLASS" />
       <mapping pattern="PopUpDemo" type="CLASS" />
       <mapping pattern="Ignore" type="Markdown" />
+      <mapping pattern="api_sample2" type="PLAIN_TEXT" />
       <mapping pattern="GUI" type="Scala" />
       <mapping pattern="api_sample" type="XML" />
     </extensionMap>
