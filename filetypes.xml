@@ -5,10 +5,11 @@
       <mapping pattern="lk" type="CLASS" />
       <mapping pattern="awd" type="CLASS" />
       <mapping pattern="BrowseGUI" type="CLASS" />
-      <mapping pattern="PopUpDemo" type="CLASS" />
       <mapping pattern="sdf" type="CLASS" />
+      <mapping pattern="PopUpDemo" type="CLASS" />
       <mapping pattern="Ignore" type="Markdown" />
       <mapping pattern="GUI" type="Scala" />
+      <mapping pattern="api_sample" type="XML" />
     </extensionMap>
   </component>
 </application>
