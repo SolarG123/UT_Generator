@@ -26,6 +26,10 @@
           <option name="url" value="https://github.com/soistmant5/Unit_Test_Generator.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:DonaldM164/PeerDev.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Desktop" />
